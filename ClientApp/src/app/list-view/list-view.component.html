@@ -1,0 +1,21 @@
+<table class="table" *ngIf="Productos">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Av. Stock</th>
+        <th scope="col">Sale Unit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of Productos">
+        <th scope="row">{{ producto.prodId }}</th>
+        <td>{{ producto.prodDescription }}</td>
+        <td>{{ producto.prodPrice }}</td>
+        <td>{{ producto.prodStock }}</td>
+        <td>{{ producto.prodSaleUnit }}</td>
+      </tr>
+      
+    </tbody>
+  </table>
