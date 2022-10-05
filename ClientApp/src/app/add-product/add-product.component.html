@@ -1,0 +1,40 @@
+<h1>Agregar producto a inventario</h1>
+<form #form="ngForm" (ngSubmit)="addProduct()">
+    <div class="mb-3">
+        <label for="inputId" class="form-label">
+            ID del producto
+        </label>
+        <input type="number" class="form-control" id="inputId"
+        name="Id" [(ngModel)]="addProductRequest.prodId" >
+    </div>
+    <div class="mb-3">
+        <label for="inputDesc" class="form-label">
+            Descripcion del producto
+        </label>
+        <input type="text" class="form-control" id="inputDesc"
+        name="Description"  [(ngModel)]="addProductRequest.prodDescription">
+    </div>
+    <div class="mb-3">
+        <label for="inputPrice" class="form-label">
+            Precio actual
+        </label>
+        <input type="number" class="form-control" id="inputPrice"
+        name="Price" [(ngModel)]="addProductRequest.prodPrice" >
+    </div>
+    <div class="mb-3">
+        <label for="inputStock" class="form-label">
+            Cantidades disponibles
+        </label>
+        <input type="number" class="form-control" id="inputStock"
+        name="Stock" [(ngModel)]="addProductRequest.prodStock">
+    </div>
+    <div class="mb-3">
+        <label for="inputSaleUnit" class="form-label">
+            Unidad de venta
+        </label>
+        <input type="text" class="form-control" id="inputSaleUnit"
+        name="SaleUnit" [(ngModel)]="addProductRequest.prodSaleUnit" >
+    </div>
+    <button type="submit" class="btn btn-success me-2">Agregar</button>
+    <button class="btn btn-secondary"  [routerLink]="['/listview']">Volver</button>
+</form>

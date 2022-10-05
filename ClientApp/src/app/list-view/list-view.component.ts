@@ -22,11 +22,13 @@ export class ListViewComponent implements OnInit {
     this.productoService.getAllProducts().subscribe(result =>
     {
       this.Productos = result;
-      console.log(this.Productos);
     })
   }
-  }
 
+
+}
+
+  
 
 export interface Producto {
   prodId: number,

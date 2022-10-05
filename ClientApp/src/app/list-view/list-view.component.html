@@ -1,3 +1,7 @@
+
+<h1>Control de Productos</h1>
+<button [routerLink]="['/AddProduct']" class="btn btn-primary my-2">Insertar nuevo producto</button>
+
 <table class="table" *ngIf="Productos">
     <thead>
       <tr>
@@ -15,7 +19,13 @@
         <td>{{ producto.prodPrice }}</td>
         <td>{{ producto.prodStock }}</td>
         <td>{{ producto.prodSaleUnit }}</td>
+        <td>
+          <button [routerLink]="['/EditProduct/', producto.prodId]"class="btn btn-warning me-3">Actualizar</button>
+          <button class="btn btn-danger">Eliminar</button>
+        </td>
       </tr>
       
+      
+      <!-- <button (click)="open()">Launch</button> -->
     </tbody>
   </table>

@@ -9,18 +9,22 @@ import { ProductosService } from './Services/productos.service';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ListViewComponent } from './list-view/list-view.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { StatusModalComponent } from './status-modal/status-modal.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
     FetchDataComponent,
-    ListViewComponent
+    ListViewComponent,
+    AddProductComponent,
+    StatusModalComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,9 +34,10 @@ import { ListViewComponent } from './list-view/list-view.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'listview', component: ListViewComponent}
+      { path: 'listview', component: ListViewComponent},
+      { path: 'AddProduct', component: AddProductComponent},
+      { path: 'EditProduct/:id', component: EditProductComponent}
     ])
   ],
   providers: [ProductosService],

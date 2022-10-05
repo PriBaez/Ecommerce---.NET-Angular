@@ -35,7 +35,7 @@ namespace netAngular.Controllers
 
         // GET: api/Productos/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Producto>> GetProducto(decimal id)
+        public async Task<ActionResult<Producto>> GetProducto(int id)
         {
           if (_context.Productos == null)
           {
@@ -54,7 +54,7 @@ namespace netAngular.Controllers
         // PUT: api/Productos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProducto(decimal id, Producto producto)
+        public async Task<IActionResult> PutProducto(int id, Producto producto)
         {
             if (id != producto.ProdId)
             {
