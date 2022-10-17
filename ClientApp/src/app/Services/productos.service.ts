@@ -29,6 +29,10 @@ export class ProductosService {
   updateProduct(id:string, productDetails: Producto): Observable<Producto> {
     return this.http.put<Producto>('https://localhost:7059/api/Productos/' + id, productDetails);
   }
+
+  deleteProduct(id:string): Observable<Producto> {
+    return this.http.delete<Producto>('https://localhost:7059/api/Productos/' + id);
+  }
  
 }
 

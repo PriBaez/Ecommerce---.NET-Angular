@@ -4,6 +4,7 @@ import { ProductosService } from '../Services/productos.service';
 import { Router } from '@angular/router';
 import { Modal } from 'bootstrap';
 import { StatusModalComponent } from '../status-modal/status-modal.component';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-add-product',
@@ -31,11 +32,28 @@ export class AddProductComponent implements OnInit {
   this.productoService.addProduct(this.addProductRequest)
   .subscribe({
     next: (producto) => {
-      this.router.navigate(['/listview'])
-      //this.testModal?.show();
+      setTimeout(() => {
+        this.modal().hide();
+        this.router.navigate(['/listview']);
+      }, 2500);
+      this.modal().show()
+      
 
-    }, error: (err) => 
-    console.log(err)
+    }, error: (err) => {
+      console.log(err)
+      // this.launchErrorAlert();
+    }
   })
  }
+
+  // launchErrorAlert() {
+  //   var alert = document.getElementById('myErrorAlert');  
+  //   alert!.hidden = false; 
+  // }
+
+  modal() {
+    var modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('exampleModal')!);
+    return modal;
+  }
+
 }

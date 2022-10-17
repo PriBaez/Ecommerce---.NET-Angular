@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import * as bootstrap from 'bootstrap';
 import { Modal } from 'bootstrap';
-import { text } from 'stream/consumers';
+
+declare var window: any;
 
 @Component({
   selector: 'app-status-modal',
@@ -10,21 +12,15 @@ import { text } from 'stream/consumers';
 })
 export class StatusModalComponent implements OnInit {
 
-  testModal: Modal | undefined;
-  constructor(public dialog: MatDialog) { }
+  
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  open()
-  {
-    var testModal = document.getElementById("exampleModal")
-    if(testModal){
-      this.testModal = new Modal(testModal, {
-        keyboard:false
-      });
-    }
-    this.testModal?.show();
+  closeModal() {
+    var modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('exampleModal')!);
+    modal.hide()
   }
 
 }

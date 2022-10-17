@@ -20,12 +20,12 @@
         <td>{{ producto.prodStock }}</td>
         <td>{{ producto.prodSaleUnit }}</td>
         <td>
-          <button [routerLink]="['/EditProduct/', producto.prodId]"class="btn btn-warning me-3">Actualizar</button>
-          <button class="btn btn-danger">Eliminar</button>
+          <button [routerLink]="['/EditProduct/', producto.prodId]" class="btn btn-warning me-3">Actualizar</button>
+          <button class="btn btn-danger" (click)="deleteProduct(producto.prodId)">Eliminar</button>
         </td>
       </tr>
       
-      
-      <!-- <button (click)="open()">Launch</button> -->
     </tbody>
   </table>
+
+  

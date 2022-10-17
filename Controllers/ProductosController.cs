@@ -113,7 +113,7 @@ namespace netAngular.Controllers
 
         // DELETE: api/Productos/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProducto(decimal id)
+        public async Task<IActionResult> DeleteProducto(int id)
         {
             if (_context.Productos == null)
             {

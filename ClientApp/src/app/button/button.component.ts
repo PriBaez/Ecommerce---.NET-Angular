@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NumericDictionary } from 'cypress/types/lodash';
 
 @Component({
   selector: 'app-button',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
+  @Input() productID!: Number;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  testId() {
+    console.log(this.productID);
+  }
 }

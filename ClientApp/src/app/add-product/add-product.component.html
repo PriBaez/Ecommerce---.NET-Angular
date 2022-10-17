@@ -1,4 +1,13 @@
 <h1>Agregar producto a inventario</h1>
+
+<!-- <div class="alert alert-success" id="myAlert" role="alert" hidden>
+    Producto agregado exitosamente
+</div>
+
+<div class="alert alert-danger" id="myErrorAlert" role="alert" hidden>
+    Ha ocurrido un error, trate de nuevamente.
+</div> -->
+
 <form #form="ngForm" (ngSubmit)="addProduct()">
     <div class="mb-3">
         <label for="inputId" class="form-label">
@@ -38,3 +47,7 @@
     <button type="submit" class="btn btn-success me-2">Agregar</button>
     <button class="btn btn-secondary"  [routerLink]="['/listview']">Volver</button>
 </form>
+
+<app-status-modal></app-status-modal>
+
+<!-- <button class="btn btn-warning my-2" data-bs-toogle="modal" (click)="launchModal()">Modal aqui</button> -->
